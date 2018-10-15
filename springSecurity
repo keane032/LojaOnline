@@ -1,0 +1,8 @@
+﻿select * from usuarios_roles
+select * from usuario
+select * from Role
+insert into usuario (senha,endereco,login,nome) values ('$2a$10$asmHBpe0jFGib9ZbhlzZWOGod35D.Q9VOZn3Om0VKmFWqoXQmV84i','rui maia','R-avila','Roy Kenae')
+
+insert into role(nome_role) values ('ROLE_ADMIN')
+insert into role(nome_role) values ('ROLE_USER')
+insert into usuarios_roles(usuario_id,role_id) values('R-avila','ROLE_ADMIN')
