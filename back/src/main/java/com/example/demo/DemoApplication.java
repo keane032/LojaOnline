@@ -11,7 +11,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@RestController
 @EnableAutoConfiguration
 public class DemoApplication {
 
@@ -20,10 +19,6 @@ public class DemoApplication {
 		System.out.println(new BCryptPasswordEncoder().encode("1234"));
 	}
 	
-	@RequestMapping("/home")
-	public String hello() {
-		return "Hello buddy!";
-	}
 	@Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
