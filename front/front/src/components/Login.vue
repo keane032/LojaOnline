@@ -1,19 +1,20 @@
 <template>
-    <div>
+    <div id="login">
         <h1>Login</h1>
             <label for="email">Login</label>
-            <input type="email" required class="form-control" name="login" aria-describedby="emailHelp" placeholder="email@exemplo.com" v-model="usuario.login">
+            <input type="email" name="login" placeholder="email@exemplo.com" v-model="usuario.login">
+            <br/>
             <label for="senha">Senha</label>
-            <input type="password" required class="form-control" placeholder="Informe sua senha" v-model="usuario.senha">
-            <button v-on:click.prevent="" >Cadastrar</button>
+            <input type="password" placeholder="Informe sua senha" v-model="usuario.senha">
+            <br/>
+            <button v-on:click.prevent="logar()">Cadastrar</button>
     </div>
 </template>
 
 <script>
-
 // eslint-disable-next-line
 /* eslint-disable */
-let APIURL = "http://localhost:8081"
+let APIURL = "http://localhost:8080"
 export default {
     name:'Login',
     data () {
@@ -25,11 +26,25 @@ export default {
         }
     },
     methods:{
-        logar(){
-           
+        logar(){ 
+            console.log(this.usuario) 
+           this.$http.post(APIURL+"/login",this.usuario)
+           .then(function(resp){
+               console.log(resp)
+               console.log(resp.body)
+           });
         }
     }
 }
 
 </script>
 
+<style scoped>
+#login{
+    text-align: center;
+}
+label{
+    text-align: center;
+    margin-bottom: 50%
+}
+</style>

@@ -19,13 +19,4 @@ public class DemoApplication {
 		System.out.println(new BCryptPasswordEncoder().encode("1234"));
 	}
 	
-	@Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://localhost:8081").allowedMethods("GET","POST","PUT","DELETE");
-            }
-        };
-    }
 }

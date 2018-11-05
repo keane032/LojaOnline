@@ -1,5 +1,8 @@
 package com.example.demo.security;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+@JsonAutoDetect 
 public class AppUser {
 
 	private String login;
