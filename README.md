@@ -1,2 +1,3 @@
 # LojaOnline
-Recriado o Trabalho Final da Diciplina de web com spring-boot e vue.js
+Recriado o Trabalho Final da Diciplina de web com spring-boot(back-end) e vue.js(front-end).
+
