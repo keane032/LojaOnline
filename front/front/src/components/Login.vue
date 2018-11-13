@@ -14,6 +14,7 @@
 <script>
 // eslint-disable-next-line
 /* eslint-disable */
+import {checkExpiretion} from "../auth/auth-header.js"
 let APIURL = "http://localhost:8080"
 export default {
     name:'Login',
@@ -27,11 +28,11 @@ export default {
     },
     methods:{
         logar(){ 
-            console.log(this.usuario) 
            this.$http.post(APIURL+"/login",this.usuario)
            .then(function(resp){
-               console.log(resp)
-               console.log(resp.body)
+               let token = resp.headers.map.authorization[0]
+               localStorage.setItem("token",token.split(" ")[1])
+               checkExpiretion()
            });
         }
     }
@@ -43,8 +44,8 @@ export default {
 #login{
     text-align: center;
 }
-label{
+input{
     text-align: center;
-    margin-bottom: 50%
+    margin: 1%;
 }
 </style>

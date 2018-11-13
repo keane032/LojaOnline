@@ -48,7 +48,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 			throw new BadCredentialsException("Invalid username/password");
 		}
 		
-	    return new UsernamePasswordAuthenticationToken(user, usuario.getSenha(), Collections.emptyList());
+	    return new UsernamePasswordAuthenticationToken(user.getLogin(), usuario.getSenha(), Collections.emptyList());
 		
 		
 	}
